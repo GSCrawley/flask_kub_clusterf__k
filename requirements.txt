@@ -1,0 +1,6 @@
+pymysql
+db_config
+flask
+werkzeug
+flaskext.mysql
+MySQL
