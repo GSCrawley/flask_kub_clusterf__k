@@ -8,15 +8,15 @@ RUN apt-get -y install \
     python3-dev \
     build-essential
 
-COPY nginx.conf /etc/nginx/nginx.com
+COPY nginx.conf /etc/nginx/nginx.conf
 
 WORKDIR /app
 
 COPY requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt --src /usr/local/src
 
-COPY app.py /app/app.py
-COPY config.py /app/config.py
+COPY flaskapi.py /app/flaskapi.py
+COPY flaskapi-config.py /app/flaskapi-config.py
 COPY uwsgi.ini /app/wsgi.ini
 COPY startup.sh /app/startup.sh
 
